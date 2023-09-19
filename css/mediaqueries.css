@@ -1,0 +1,281 @@
+/* ----- Mobile Navbar Start ----- */
+.hamburger {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 25px;
+  right: 25px;
+  width: 50px;
+  height: 50px;
+  background-color: var(--themeColor);
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 20%);
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  opacity: 0;
+  z-index: 999;
+}
+
+.hamburger .line {
+  position: absolute;
+  width: 30px;
+  height: 4px;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
+  border-radius: 5px;
+  transition: all 0.5s ease-in-out;
+}
+
+.hamburger .line::before,
+.hamburger .line::after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 4px;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
+  transition: all 0.5s ease-in-out;
+}
+
+.hamburger .line::before {
+  transform: translateY(-8px);
+}
+
+.hamburger .line::after {
+  transform: translateY(8px);
+}
+
+/* Hamburger Animation Start */
+.hamburger.active .line {
+  transform: translateX(-30px);
+  background: transparent;
+  box-shadow: none;
+}
+
+.hamburger.active .line::before {
+  transform: rotate(45deg) translate(21px, -21px);
+}
+.hamburger.active .line::after {
+  transform: rotate(-45deg) translate(21px, 21px);
+}
+/* ----- Hamburger Animation End ----- */
+
+/* ----- Mobile View Start ----- */
+@media only screen and (max-width: 1024px) {
+  /* ----- Hide Header Mobile View Start ----- */
+  header {
+    left: -300px;
+  }
+
+  header .footer {
+    left: -300px;
+  }
+  /* ----- Hide Header Mobile View End ----- */
+
+  /* ----- Show Header Mobile View Start ----- */
+  .header.active {
+    left: 0;
+  }
+  .header.active .footer {
+    left: 0;
+  }
+  /* ----- Show Header Mobile View End ----- */
+
+  /* ----- Show Hamburger menu Start ----- */
+  .hamburger {
+    opacity: 1;
+  }
+  /* ----- Show Hamburger menu End ----- */
+
+  /* ============================================ */
+  /* === MAIN Section Mobile View === */
+  main {
+    margin-left: 0;
+  }
+  /* ============================================ */
+
+  /* Home Section Start */
+  #home {
+    padding: 30px;
+  }
+  #home .home-row h1 {
+    font-size: 35px;
+    letter-spacing: 0;
+    line-height: 50px;
+  }
+  #home .home-row h1 br {
+    display: none;
+  }
+  #home .home-row p {
+    font-size: 20px;
+    font-weight: 400;
+  }
+  /* Home Section Mobile View End */
+
+  /* ===================================================== */
+
+  /* == About Section Mobile View Start == */
+  #about {
+    padding: 50px 10px;
+  }
+  #about .divider ~ p {
+    font-size: 14px;
+    letter-spacing: 0;
+    text-align: justify;
+  }
+  #about .about-col {
+    flex-direction: column;
+  }
+  #about .about-col .img-col img {
+    width: 50%;
+  }
+  #about .about-col .info-col h2 {
+    font-weight: 600;
+    font-size: 25px;
+    letter-spacing: 0;
+  }
+  #about .about-col .info-col p {
+    display: flex;
+    margin-top: 20px;
+    gap: 40px;
+  }
+  #about .about-col .info-col .icon-list-col {
+    flex-direction: column;
+    gap: 0;
+  }
+  #about .about-col .info-col .icon-list-col .icon-list ul li strong {
+    font-weight: 500;
+    margin-right: 0;
+  }
+  #about .about-col .info-col .icon-list-col .icon-list ul li span {
+    font-weight: 400;
+    font-size: 13px;
+  }
+  /* == About Section Mobile View End == */
+
+  /* ===================================================== */
+
+  /* == Fact Section Mobile View Start == */
+  #fact {
+    padding: 40px 15px;
+  }
+  #fact .fact-row {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+  }
+  /* == Fact Section Mobile View End == */
+
+  /* ===================================================== */
+
+  /* == Skill Section Mobile View Start == */
+  #skill {
+    padding: 50px 15px;
+  }
+  /* == Skill Section Mobile View End == */
+
+  /* ===================================================== */
+
+  /* == Resume Section Mobile  View Start == */
+  #resume {
+    padding: 50px 15px;
+  }
+
+  #resume .resume-row {
+    flex-direction: column;
+  }
+  #resume .resume-row .resume-cols {
+    flex-basis: 100%;
+  }
+
+  /* == Resume Section Mobile  View End == */
+
+  /* ===================================================== */
+
+  /* == Portfolio Section Mobile View Start == */
+  #portfolio {
+    padding: 50px 15px;
+  }
+  #portfolio .port-row {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 15px;
+  }
+  /* == Portfolio Section Mobile View End == */
+
+  /* ===================================================== */
+
+  /* == Services Section Mobile View Start == */
+  #service {
+    padding: 50px 15px;
+  }
+  #service .service-row {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 15px;
+  }
+  /* == Services Section Mobile View End == */
+
+}
+
+/* == Mobile View Small Screen Start == */
+@media only screen and (max-width: 768px) {
+  /* == About Section Mobile View img Start == */
+  #about .about-col .img-col img {
+      width: 90%
+  }
+  /* == About Section Mobile View img End == */
+
+  /* ----------------------------------------------------- */
+
+  /* == Fact Adjust Content Start == */
+  #fact .fact-row .fact-box i {
+    font-size: 30px;
+  }
+  #fact .fact-row .fact-box strong {
+    font-size: 20px;
+  }
+  #fact .fact-row .fact-box p {
+    font-weight: 400;
+    font-size: 15px;
+  }
+  /* == Fact Adjust Content End == */
+
+  /* ----------------------------------------------------- */
+
+  /* == Skill Adjust content Start == */
+  #skill .skill-row {
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 10px;
+  }
+  /* == Skill Adjust content End == */
+
+  /* ----------------------------------------------------- */
+
+  /* == Portfolio Adjust content Start == */
+  #portfolio .port-row {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  /* == Portfolio Adjust content End == */
+
+  /* ----------------------------------------------------- */
+
+  /* == Service Adjust content Start == */
+  #service .service-row {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  /* == Service Adjust content End == */
+
+  /* ----------------------------------------------------- */
+
+  /* == Contact Adjust content Start == */
+  #contact .contact-row {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  /* == Contact Adjust content End == */
+
+}
+/* == Mobile View Small Screen End == */
+
+/* ----- Mobile View End ----- */
+
+/* ----- Mobile Navbar End ----- */
